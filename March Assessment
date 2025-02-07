@@ -1,0 +1,77 @@
+#Q1
+for i in range(2,22,2):
+    print(i)
+
+#Q2
+name = input("Enter a name:")
+for i in name:
+    print(i)
+
+#Q3
+total = 0
+for i in range(1,51):
+    total += i
+    print(total)
+
+#Q4
+user = "books123"
+psw = 123123
+count = 0
+loggedin = False
+fineRate = 2.50
+total = 0
+un = input("Enter your username:")
+if un == user:
+    while count < 3:
+        passwd = int(input("Enter your password:"))
+        if passwd == psw:
+           loggedin = True
+        while loggedin == True:
+           print("***************************************************")
+           print("***               Library Account               ***")
+           print("***************************************************")
+           print("***  Option 1:    Return a book                 ***")
+           print("***  Option 2:    Borrow a book                 ***")
+           print("***  Option 3:    Exit                          ***")
+           print("***************************************************")
+           option = input("Enter an option:")
+           if option == "1":
+               books = int(input("How many books would you like to return?"))
+               for i in range(books):
+                   late = int(input("Enter how late the book is(days):"))
+               total = late*fineRate
+               if late >= 15:
+                   newtotal = late*fineRate
+                   nwtotal = newtotal/0.2*100
+                   print("Your total is:",nwtotal)
+                   print("Payment made.")
+                   print(books, "books have now been returned.")
+                   print("Thank you.")
+                   option = input("Enter an option:")
+               else:
+                   print("Your total fine is:",total)
+                   print("Payment made.")
+                   print(books, "books have now been returned.")
+                   print("Thank you.")
+                   option = input("Enter an option:")
+           if option == "2": #im using if again because elif wouldn't work
+               print("Scan book.")
+               option = input("Enter an option:")
+           if option == "3":
+               loggedin = False
+               print("Logging out..")
+               count = count + 5 #had to add count here otherwise it would ask for password again
+               break
+           else:
+               print("Invalid input")
+               option = input("Enter an option:")
+        else:
+            print("Incorrect password.")
+            count = count + 1
+            if count == 3:
+                print("Your account is blocked.")
+else:
+    print("Incorrect username entered.")
+    
+    
+
