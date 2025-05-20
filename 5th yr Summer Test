@@ -39,5 +39,5 @@ staff = random.choice(item_list)
 print("Your random item to be checked is:", staff)
 item_list.sort()
 item_prices.sort()
-# expensive = item_list[i] 
-# print("The most expensive item is:", expensive) 
+#expensive = item_list[i] 
+#print("The most expensive item is:", expensive) 
